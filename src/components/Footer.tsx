@@ -13,6 +13,8 @@ import {
   CheckCircle2,
   Layers,
   Sparkles,
+  Flame,
+  Zap,
 } from 'lucide-react';
 
 export function Footer() {
@@ -27,33 +29,33 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
               Systems Platform
             </h4>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 flex flex-col justify-between flex-1 space-y-3.5 text-xs">
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-4 text-xs">
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white font-black text-sm shadow-xs shrink-0">
-                    GS
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-purple-700 text-white font-black text-sm shadow-xs shrink-0">
+                    <Flame className="h-5 w-5" />
                   </div>
                   <div className="flex items-center gap-2 min-w-0 flex-wrap">
                     <span className="text-base font-extrabold tracking-tight text-[var(--color-text-primary)] whitespace-nowrap">
-                      GearSignal AI
+                      VenueStrike Core
                     </span>
-                    <span className="rounded-full bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 text-[10px] font-mono font-bold text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 whitespace-nowrap shrink-0">
-                      v1.2 Production MVP
+                    <span className="rounded-full bg-indigo-100 dark:bg-indigo-950 px-2.5 py-0.5 text-[11px] font-mono font-bold text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                      v2.4.0 Production MVP
                     </span>
                   </div>
                 </div>
-                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
-                  High-intent social listening & opportunity scoring engine for musical gear marketplaces. Monitors Reddit, YouTube, TheGearPage, and TalkBass for Reverb/eBay fee fatigue and seller switching intent.
+                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed font-normal">
+                  High-concurrency booking, package bundling, and venue operations platform for bowling centers, darts bars, and entertainment venues. Eliminates peak Saturday double-bookings via PostgreSQL advisory locks and Toast POS sync.
                 </p>
               </div>
 
               {/* Verified Platform Status Strip - Strict Single Line Anti-Wrapping */}
-              <div className="pt-2.5 border-t border-[var(--color-border)] flex items-center justify-between gap-2 text-xs font-mono">
-                <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium whitespace-nowrap min-w-0">
+              <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-2 text-xs font-mono">
+                <div className="flex items-center gap-1.5 text-indigo-700 dark:text-indigo-400 font-semibold whitespace-nowrap min-w-0">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-                  <span className="text-[11px] font-semibold truncate">Inference: 94ms</span>
+                  <span className="text-[11px] font-bold truncate">Lock Latency: 3.4ms</span>
                 </div>
-                <span className="inline-flex items-center rounded-md bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 text-[10px] font-mono font-semibold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 whitespace-nowrap shrink-0">
+                <span className="inline-flex items-center rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-mono font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
                   100% Codebase Ownership
                 </span>
               </div>
@@ -65,43 +67,43 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
               Systems Architecture
             </h4>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 flex flex-col justify-between flex-1 space-y-3.5 text-xs">
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-4 text-xs">
               <div className="space-y-2">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-[11px] font-mono text-[var(--color-text-secondary)]">
-                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs">
-                    <Terminal className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                    <span className="truncate">Next.js 15 App</span>
+                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
+                    <Terminal className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                    <span className="truncate">Next.js 15 App Router</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs">
-                    <Cpu className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                    <span className="truncate">Dual-Model AI</span>
+                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
+                    <ShieldCheck className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                    <span className="truncate">Postgres Mutex Locks</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs">
-                    <Workflow className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                    <span className="truncate">n8n & Make Fleet</span>
+                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
+                    <Activity className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                    <span className="truncate">Redis 120s TTL Holds</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs">
-                    <Layers className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                    <span className="truncate">Bloom Filter Dedupe</span>
+                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
+                    <Workflow className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                    <span className="truncate">Toast POS Webhooks</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs">
-                    <Activity className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                    <span className="truncate">Slack Block Kit</span>
+                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
+                    <Cpu className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                    <span className="truncate">Brunswick Sync Bridge</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs">
-                    <Code2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                    <span className="truncate">Airtable Data Sync</span>
+                  <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
+                    <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                    <span className="truncate">Dual AI Copilot</span>
                   </div>
                 </div>
               </div>
 
               {/* Compliance & SLA Verification Strip */}
-              <div className="pt-2.5 border-t border-[var(--color-border)] flex items-center justify-between gap-2 text-xs font-mono">
-                <span className="text-[11px] text-[var(--color-text-muted)] font-medium truncate">
-                  NIST AI RMF 100-1
+              <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-2 text-xs font-mono">
+                <span className="text-[11px] text-[var(--color-text-secondary)] font-semibold truncate">
+                  PCI-DSS &amp; NIST AI RMF
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 whitespace-nowrap shrink-0">
-                  99.99% SLA
+                <span className="inline-flex items-center gap-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                  99.99% Peak SLA
                 </span>
               </div>
             </div>
@@ -112,14 +114,14 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
               Principal Systems Architect
             </h4>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 flex flex-col justify-between flex-1 space-y-3 text-xs">
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-4 text-xs">
               <div className="space-y-2.5">
                 <div className="flex items-center gap-3">
                   <div className="relative shrink-0">
                     <img
                       src="/headshot.jpeg"
                       alt="Shakil Ahmed - Principal Systems Architect"
-                      className="h-11 w-11 rounded-xl object-cover ring-2 ring-emerald-500/30 border border-[var(--color-border)] shadow-xs"
+                      className="h-11 w-11 rounded-xl object-cover ring-2 ring-indigo-500/30 border border-[var(--color-border)] shadow-xs"
                     />
                     <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-500 text-white ring-2 ring-white dark:ring-slate-900 shadow-xs" title="Verified Architect">
                       <CheckCircle2 className="h-2.5 w-2.5" />
@@ -128,29 +130,29 @@ export function Footer() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 font-bold text-[var(--color-text-primary)] text-sm">
                       <span className="truncate">Shakil Ahmed</span>
-                      <span className="inline-flex items-center rounded bg-emerald-50 dark:bg-emerald-950/60 px-1.5 py-0.2 text-[10px] font-mono font-semibold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 whitespace-nowrap shrink-0">
+                      <span className="inline-flex items-center rounded bg-indigo-50 dark:bg-indigo-950/60 px-1.5 py-0.2 text-[10px] font-mono font-semibold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
                         Lead
                       </span>
                     </div>
-                    <p className="text-[11px] text-[var(--color-text-muted)] font-mono truncate">
-                      Autonomous Systems &amp; AI Architect
+                    <p className="text-[11px] text-[var(--color-text-secondary)] font-mono font-medium truncate">
+                      Autonomous Systems &amp; High-Concurrency SaaS
                     </p>
                   </div>
                 </div>
-                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
-                  Former Lead Systems Engineer at Legiit ($1M ARR Command Center). 12+ Years Enterprise Systems &amp; Autonomous AI Delivery.
+                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed font-normal">
+                  Former Lead Systems Engineer at Legiit ($1M ARR Command Center). 12+ Years Enterprise Systems &amp; Real-Time Booking Delivery.
                 </p>
               </div>
 
               {/* Certified Architect Verification Bar */}
-              <div className="pt-2.5 border-t border-[var(--color-border)] flex items-center justify-between gap-1.5 text-xs font-mono">
-                <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium min-w-0">
+              <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-1.5 text-xs font-mono">
+                <div className="flex items-center gap-1.5 text-indigo-700 dark:text-indigo-400 font-semibold min-w-0">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                  <span className="whitespace-nowrap shrink-0 text-[11px] font-semibold">Securiti Certified</span>
+                  <span className="whitespace-nowrap shrink-0 text-[11px] font-bold">Securiti Certified</span>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 whitespace-nowrap shrink-0">
-                  <ShieldCheck className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                  <span>Verified</span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                  <ShieldCheck className="h-3 w-3 text-indigo-600 dark:text-indigo-400" />
+                  <span>Verified Partner</span>
                 </span>
               </div>
             </div>
@@ -159,28 +161,32 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between border-t border-[var(--color-border)] pt-6 text-xs text-[var(--color-text-muted)] font-mono gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between border-t border-[var(--color-border)] pt-6 text-xs text-[var(--color-text-secondary)] font-mono gap-4">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5 text-center md:text-left">
-            <span>© {new Date().getFullYear()} GearSignal AI</span>
+            <span className="font-bold text-[var(--color-text-primary)]">© {new Date().getFullYear()} VenueStrike Core</span>
             <span className="text-[var(--color-border)] select-none">•</span>
-            <span>Built for Custom Musical Gear Marketplaces</span>
+            <span>Built for Multi-Unit Entertainment Venues &amp; Bowling Centers</span>
           </div>
 
-          <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
-            <a href="#pipeline" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
-              Pipeline Canvas
+          <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold">
+            <a href="#bookings" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
+              Floor Map
             </a>
             <span className="text-[var(--color-border)] select-none hidden sm:inline">•</span>
-            <a href="#config" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
-              Keyword Base
+            <a href="#concurrency" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
+              Peak Rush Mutex
             </a>
             <span className="text-[var(--color-border)] select-none hidden sm:inline">•</span>
-            <a href="#slack" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
-              Slack Cockpit
+            <a href="#pricing" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
+              Pricing Rules
             </a>
             <span className="text-[var(--color-border)] select-none hidden sm:inline">•</span>
-            <a href="#blueprints" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
-              Blueprints
+            <a href="#integrations" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
+              POS &amp; Scoring
+            </a>
+            <span className="text-[var(--color-border)] select-none hidden sm:inline">•</span>
+            <a href="#reporting" className="hover:text-[var(--color-text-primary)] transition-colors whitespace-nowrap">
+              Manager Telemetry
             </a>
           </nav>
         </div>
