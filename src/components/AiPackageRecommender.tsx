@@ -19,6 +19,9 @@ import {
   TrendingUp,
   Award,
   Lock,
+  CreditCard,
+  Wine,
+  Sliders,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -135,6 +138,8 @@ export function AiPackageRecommender() {
   const [budget, setBudget] = useState(PRESETS[0].budget);
   const [vibe, setVibe] = useState(PRESETS[0].vibe);
   const [dietary, setDietary] = useState(PRESETS[0].dietary);
+  const [cateringTier, setCateringTier] = useState('artisan');
+  const [spatialPairing, setSpatialPairing] = useState('paired-lanes');
   const [isLoading, setIsLoading] = useState(false);
 
   // Mandatory Zero-Empty State: populated with high-fidelity realistic inference
@@ -159,7 +164,7 @@ export function AiPackageRecommender() {
     },
     provider: 'OPENAI',
     model: 'gpt-4o-mini',
-    latencyMs: 142,
+    latencyMs: 138,
   });
 
   const handleApplyPreset = (index: number) => {
@@ -210,6 +215,8 @@ export function AiPackageRecommender() {
           budget,
           vibe,
           dietary,
+          cateringTier,
+          spatialPairing,
         }),
       });
       const data = await res.json();
@@ -255,7 +262,7 @@ export function AiPackageRecommender() {
             </span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
+          <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[var(--color-text-primary)]">
             AI Event Package Recommender &amp; Upsell Revenue Engine
           </h3>
 
@@ -269,7 +276,7 @@ export function AiPackageRecommender() {
           <Button
             onClick={handleGeneratePackage}
             disabled={isLoading}
-            className="h-10 px-5 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 hover:opacity-95 text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap shrink-0 border border-indigo-500/30"
+            className="h-10 px-5 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 hover:opacity-95 text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap shrink-0 border border-indigo-500/30 cursor-pointer"
           >
             {isLoading ? (
               <>
@@ -335,102 +342,165 @@ export function AiPackageRecommender() {
       </div>
 
       {/* 2-Column Core: Event Config (Left 5 cols) + Generated Package Invoice (Right 7 cols) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-5">
-        {/* Left Inputs (5 cols) */}
-        <div className="lg:col-span-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 space-y-4">
-          <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
-              Event Booking Parameters
-            </span>
-            <span className="text-[11px] font-mono text-slate-600 dark:text-slate-400">
-              Front-Desk Intake
-            </span>
-          </div>
-
-          <div className="space-y-3 text-xs">
-            <div>
-              <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
-                Occasion / Celebration Type
-              </label>
-              <input
-                type="text"
-                value={eventType}
-                onChange={(e) => setEventType(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-5 items-stretch">
+        {/* Left Inputs (5 cols) - Fully populated with zero dead void */}
+        <div className="lg:col-span-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+          <div className="space-y-3.5">
+            <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] font-mono flex items-center gap-1.5">
+                <Sliders className="h-3.5 w-3.5 text-indigo-600" />
+                Event Booking Parameters
+              </span>
+              <span className="text-[11px] font-mono text-slate-600 dark:text-slate-400">
+                Front-Desk Intake
+              </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="space-y-3 text-xs">
               <div>
                 <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
-                  Guest Count
-                </label>
-                <input
-                  type="number"
-                  value={partySize}
-                  onChange={(e) => setPartySize(parseInt(e.target.value, 10) || 4)}
-                  className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-
-              <div>
-                <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
-                  Duration (Hours)
-                </label>
-                <input
-                  type="number"
-                  step="0.5"
-                  value={durationHours}
-                  onChange={(e) => setDurationHours(parseFloat(e.target.value) || 2)}
-                  className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
-                  Target Budget
+                  Occasion / Celebration Type
                 </label>
                 <input
                   type="text"
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
+                  value={eventType}
+                  onChange={(e) => setEventType(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
+                    Guest Count
+                  </label>
+                  <input
+                    type="number"
+                    value={partySize}
+                    onChange={(e) => setPartySize(parseInt(e.target.value, 10) || 4)}
+                    className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
+                    Duration (Hours)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.5"
+                    value={durationHours}
+                    onChange={(e) => setDurationHours(parseFloat(e.target.value) || 2)}
+                    className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
+                    Target Budget
+                  </label>
+                  <input
+                    type="text"
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
+                    Atmosphere
+                  </label>
+                  <input
+                    type="text"
+                    value={vibe}
+                    onChange={(e) => setVibe(e.target.value)}
+                    className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
               </div>
 
               <div>
                 <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
-                  Atmosphere
+                  Dietary &amp; Beverage Notes
                 </label>
                 <input
                   type="text"
-                  value={vibe}
-                  onChange={(e) => setVibe(e.target.value)}
+                  value={dietary}
+                  onChange={(e) => setDietary(e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
               </div>
+
+              {/* F&B Catering Tier & Spatial Allocation Selectors to perfectly balance column height */}
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div>
+                  <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1 flex items-center gap-1">
+                    <Wine className="h-3 w-3 text-indigo-600" />
+                    Catering Tier
+                  </label>
+                  <select
+                    value={cateringTier}
+                    onChange={(e) => setCateringTier(e.target.value)}
+                    className="w-full px-2.5 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+                  >
+                    <option value="artisan">Artisan Craft Bar ($42/pp)</option>
+                    <option value="vip">Executive Luxury ($75/pp)</option>
+                    <option value="social">Social Nacho &amp; Draft ($34/pp)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1 flex items-center gap-1">
+                    <Layers className="h-3 w-3 text-indigo-600" />
+                    Spatial Allocation
+                  </label>
+                  <select
+                    value={spatialPairing}
+                    onChange={(e) => setSpatialPairing(e.target.value)}
+                    className="w-full px-2.5 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+                  >
+                    <option value="paired-lanes">Paired Center Lanes + Lounge</option>
+                    <option value="quad-block">Quad Lane Block (Lanes 1-4)</option>
+                    <option value="vip-penthouse">VIP Penthouse Suite A</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <label className="text-xs font-bold text-[var(--color-text-primary)] block mb-1">
-                Dietary &amp; Beverage Notes
-              </label>
-              <input
-                type="text"
-                value={dietary}
-                onChange={(e) => setDietary(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-xs font-semibold text-[var(--color-text-primary)] focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
+            {/* Front-Desk Pre-Auth Policy Badge Box */}
+            <div className="p-3 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/70 dark:bg-emerald-950/40 text-xs font-mono space-y-1">
+              <div className="flex items-center justify-between font-bold text-emerald-950 dark:text-emerald-200">
+                <span className="flex items-center gap-1.5">
+                  <CreditCard className="h-3.5 w-3.5 text-emerald-600" />
+                  Stripe Terminal Deposit Hold
+                </span>
+                <span className="text-[10px] bg-emerald-200 dark:bg-emerald-900 px-1.5 py-0.2 rounded font-mono font-bold">
+                  Zero No-Shows
+                </span>
+              </div>
+              <p className="text-[11px] text-emerald-900 dark:text-emerald-300 leading-tight font-sans">
+                Requires 40–50% upfront pre-authorized card hold before lane release, eliminating unpaid group cancellations.
+              </p>
             </div>
           </div>
 
-          <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between text-xs font-mono text-[var(--color-text-secondary)]">
-            <span className="font-semibold">Guardrail Protection:</span>
-            <span className="text-emerald-700 dark:text-emerald-400 font-bold">
+          {/* Bottom Security & Quick Trigger Strip */}
+          <div className="pt-3.5 mt-3 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-[var(--color-text-secondary)]">
+            <span className="font-semibold text-emerald-700 dark:text-emerald-400">
               OWASP LLM01 &bull; PII Filter Active
             </span>
+            <Button
+              size="sm"
+              onClick={handleGeneratePackage}
+              disabled={isLoading}
+              className="h-8 px-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-lg shadow-xs cursor-pointer"
+            >
+              <Sparkles className="h-3 w-3 mr-1" />
+              Recalculate Yield
+            </Button>
           </div>
         </div>
 
@@ -440,7 +510,7 @@ export function AiPackageRecommender() {
             {/* Blueprint Header */}
             <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-3">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-extrabold uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
+                <span className="text-xs font-black uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
                   Tailored Event Blueprint &amp; Financials
                 </span>
               </div>
@@ -449,7 +519,7 @@ export function AiPackageRecommender() {
                   {aiResult?.provider || 'OPENAI'} ({aiResult?.model || 'gpt-4o-mini'})
                 </Badge>
                 <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-                  {aiResult?.latencyMs || 142}ms
+                  {aiResult?.latencyMs || 138}ms
                 </span>
               </div>
             </div>
@@ -457,7 +527,7 @@ export function AiPackageRecommender() {
             {/* Hero Price & Package Title */}
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 bg-gradient-to-br from-indigo-50/70 to-emerald-50/40 dark:from-indigo-950/40 dark:to-slate-900 p-4 rounded-xl border border-indigo-200 dark:border-indigo-800/80">
               <div>
-                <h4 className="text-lg sm:text-xl font-extrabold text-indigo-950 dark:text-indigo-200">
+                <h4 className="text-lg sm:text-xl font-black text-indigo-950 dark:text-indigo-200">
                   {aiResult?.data?.packageName}
                 </h4>
                 <span className="text-xs font-bold text-[var(--color-text-secondary)] font-mono block mt-1">
@@ -466,7 +536,7 @@ export function AiPackageRecommender() {
               </div>
               <div className="text-left sm:text-right shrink-0">
                 <div className="flex items-baseline sm:justify-end gap-1.5">
-                  <span className="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-700 dark:text-emerald-400">
+                  <span className="text-2xl sm:text-3xl font-black font-mono text-emerald-700 dark:text-emerald-400">
                     ${financials.totalPackagePrice}
                   </span>
                   <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 font-mono bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800">

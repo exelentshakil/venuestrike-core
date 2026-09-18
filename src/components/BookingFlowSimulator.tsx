@@ -371,45 +371,59 @@ export function BookingFlowSimulator() {
       {/* 4-STEP INTERACTIVE MOTION VISUAL GUIDE                     */}
       {/* ========================================================= */}
       <div className="mt-6 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900 bg-gradient-to-b from-indigo-50/70 via-white to-slate-50/50 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-950 p-5 sm:p-6 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-indigo-100 dark:border-indigo-900/60 pb-4 mb-5">
-          <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-indigo-600 text-white shadow-xs">
-              <Activity className="h-4 w-4" />
-            </div>
-            <div>
-              <span className="text-xs font-extrabold uppercase tracking-wider text-indigo-950 dark:text-indigo-200 font-mono block">
-                Interactive Motion Architecture Guide
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-indigo-100 dark:border-indigo-900/60 pb-4 mb-5">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 dark:text-indigo-300 font-mono tracking-wider uppercase">
+                <Activity className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
+                Four-Phase Peak Concurrency Resolution
               </span>
-              <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
-                Click each phase below to inspect how VenueStrike prevents the Saturday night double-booking catastrophe:
+              <span className="text-slate-300 dark:text-slate-700 hidden sm:inline">&bull;</span>
+              <span className="text-xs font-mono font-semibold text-slate-600 dark:text-slate-400 hidden sm:inline">
+                P99 Latency: 3.4ms
               </span>
             </div>
+            <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+              Interactive Motion Architecture Guide
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-normal leading-relaxed">
+              Click any phase below or activate the auto-play tour to inspect the PostgreSQL advisory mutex and Redis TTL sequence:
+            </p>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0 flex-wrap">
+          {/* Unified, Balanced Segmented Control Bar */}
+          <div className="flex items-center gap-2 shrink-0 self-start md:self-center bg-white dark:bg-slate-900 p-1.5 rounded-xl border border-slate-300 dark:border-slate-800 shadow-2xs">
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 shadow-2xs hover:bg-slate-50"
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
+                isAutoPlaying
+                  ? 'bg-indigo-600 text-white shadow-xs'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
             >
               {isAutoPlaying ? (
                 <>
-                  <Pause className="h-3 w-3 text-indigo-600" />
+                  <Pause className="h-3.5 w-3.5" />
                   <span>Pause Motion</span>
                 </>
               ) : (
                 <>
-                  <Play className="h-3 w-3 text-indigo-600" />
+                  <Play className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
                   <span>Auto-Play Tour</span>
                 </>
               )}
             </button>
 
-            <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-              Phase {activePhaseIndex} of 4:
-            </span>
-            <span className="text-xs font-mono font-extrabold text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-950 px-2.5 py-0.5 rounded-full border border-indigo-300 dark:border-indigo-800">
-              {currentPhase.badge}
-            </span>
+            <div className="h-4 w-px bg-slate-300 dark:bg-slate-700" />
+
+            <div className="flex items-center gap-1.5 px-2">
+              <span className="text-xs font-mono font-semibold text-slate-600 dark:text-slate-400 whitespace-nowrap">
+                Phase {activePhaseIndex}/4:
+              </span>
+              <span className="text-xs font-mono font-extrabold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950 px-2 py-0.5 rounded-md border border-indigo-200 dark:border-indigo-800 whitespace-nowrap">
+                {currentPhase.badge}
+              </span>
+            </div>
           </div>
         </div>
 

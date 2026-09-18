@@ -26,12 +26,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="preload" href="/sohne-font-family/TestSohne-Buch-BF663d89cd32e6a.otf" as="font" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" href="/sohne-font-family/TestSohne-Halbfett-BF663d89cd2d67b.otf" as="font" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" href="/sohne-font-family/TestSohne-Dreiviertelfett-BF663d89ccc5f66.otf" as="font" type="font/otf" crossOrigin="anonymous" />
       </head>
       <body className="min-h-screen bg-[var(--color-canvas)] text-[var(--color-text-primary)] antialiased selection:bg-indigo-500/20 selection:text-indigo-700 dark:selection:text-indigo-300">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
