@@ -32,11 +32,11 @@ export function Footer() {
             <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-4 text-xs">
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-purple-700 text-white font-black text-sm shadow-xs shrink-0">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-purple-700 text-white font-semibold text-sm shadow-xs shrink-0">
                     <Flame className="h-5 w-5" />
                   </div>
                   <div className="flex items-center gap-2 min-w-0 flex-wrap">
-                    <span className="text-base font-extrabold tracking-tight text-[var(--color-text-primary)] whitespace-nowrap">
+                    <span className="text-base font-semibold tracking-tight text-[var(--color-text-primary)] whitespace-nowrap">
                       VenueStrike Core
                     </span>
                     <span className="rounded-full bg-indigo-100 dark:bg-indigo-950 px-2.5 py-0.5 text-[11px] font-mono font-bold text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-800 whitespace-nowrap shrink-0">

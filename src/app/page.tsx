@@ -45,7 +45,7 @@ export default function HomePage() {
     } else {
       const el = document.getElementById(sectionId);
       if (el) {
-        const headerOffset = 64; // Sticky header height allowance
+        const headerOffset = 72; // Sticky header height allowance
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = Math.max(0, elementPosition + window.scrollY - headerOffset);
         window.scrollTo({
@@ -74,8 +74,8 @@ export default function HomePage() {
   useEffect(() => {
     const sectionIds = [
       'briefing',
-      'bookings',
       'concurrency',
+      'bookings',
       'pricing',
       'integrations',
       'reporting',
@@ -121,49 +121,45 @@ export default function HomePage() {
       <main className="w-full max-w-full min-w-0 overflow-x-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 space-y-8">
           {/* Executive Briefing & Reviewer Tour */}
-          <section id="briefing" className="scroll-mt-20">
+          <section id="briefing" className="scroll-mt-24">
             <ReviewerTour
               onNavigate={handleNavigate}
               onOpenChaosModal={() => setChaosModalOpen(true)}
             />
           </section>
 
-          {/* 1. Guest Booking Flow: 16 Lanes, 8 Dartboards, 2 VIP Lounges, 120s Holds */}
-          <section id="bookings" className="scroll-mt-20">
-            <div id="concurrency" className="scroll-mt-20">
-              <BookingFlowSimulator />
-            </div>
-          </section>
+          {/* 1. Saturday Night Concurrency Engine (#concurrency) & Floor Map Spatial Inventory (#bookings) */}
+          <BookingFlowSimulator />
 
           {/* 2. Operator Back Office: Pricing Rules & POS / Scoring Integrations */}
-          <section id="pricing" className="scroll-mt-20">
-            <div id="integrations" className="scroll-mt-20">
+          <section id="pricing" className="scroll-mt-24">
+            <div id="integrations" className="scroll-mt-24">
               <OperatorBackOffice />
             </div>
           </section>
 
           {/* 3. Venue Utilization & F&B Attach Reporting */}
-          <section id="reporting" className="scroll-mt-20">
+          <section id="reporting" className="scroll-mt-24">
             <VenueUtilizationReporting />
           </section>
 
           {/* 4. Real Dual-Provider AI Event Package Builder */}
-          <section id="ai-planner" className="scroll-mt-20">
+          <section id="ai-planner" className="scroll-mt-24">
             <AiPackageRecommender />
           </section>
 
           {/* 5. Production Concurrency & Throughput Telemetry */}
-          <section id="metrics" className="scroll-mt-20">
+          <section id="metrics" className="scroll-mt-24">
             <BentoGrid />
           </section>
 
           {/* 6. Venue Economics & Cloud Infrastructure Costs */}
-          <section id="roi" className="scroll-mt-20">
+          <section id="roi" className="scroll-mt-24">
             <RoiCostCalculator />
           </section>
 
           {/* 7. Turnkey Architecture Schemas & Integration Contracts */}
-          <section id="blueprints" className="scroll-mt-20">
+          <section id="blueprints" className="scroll-mt-24">
             <BlueprintExporter />
           </section>
         </div>

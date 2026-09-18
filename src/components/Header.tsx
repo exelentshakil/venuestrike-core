@@ -50,8 +50,8 @@ export function Header({
   // Primary high-signal navigation anchors with sleek typography labels
   const primaryNavItems = [
     { id: 'ai-planner', label: 'AI Package Builder', icon: Sparkles, featured: true },
-    { id: 'bookings', label: 'Floor Map', icon: LayoutGrid },
     { id: 'concurrency', label: 'Peak Rush Lock', icon: ShieldAlert },
+    { id: 'bookings', label: 'Floor Map', icon: LayoutGrid },
     { id: 'pricing', label: 'Pricing Rules', icon: DollarSign },
     { id: 'reporting', label: 'Reporting', icon: BarChart3 },
   ];

@@ -153,7 +153,7 @@ export function BentoGrid() {
 
             <div className="flex items-baseline justify-between mb-2">
               <div>
-                <span className="text-2xl sm:text-3xl font-extrabold font-mono text-[var(--color-text-primary)]">
+                <span className="text-2xl sm:text-3xl font-semibold font-mono text-[var(--color-text-primary)]">
                   1,240
                 </span>
                 <span className="text-xs text-[var(--color-text-muted)] font-mono ml-1.5">

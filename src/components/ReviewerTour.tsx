@@ -70,7 +70,7 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
               Entertainment Venue SaaS Architecture
             </span>
           </div>
-          <h2 className="text-lg sm:text-xl font-extrabold tracking-tight text-[var(--color-text-primary)]">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight text-[var(--color-text-primary)]">
             How to Evaluate VenueStrike Core: Zero Peak Double-Bookings
           </h2>
           <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] mt-1 max-w-4xl leading-relaxed font-normal">
@@ -119,7 +119,7 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
                       </span>
                       <Icon className="h-4 w-4 text-[var(--color-text-secondary)] group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" />
                     </div>
-                    <h3 className="text-sm font-extrabold text-[var(--color-text-primary)] mb-2">
+                    <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-2">
                       {path.title}
                     </h3>
                     <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed font-normal">

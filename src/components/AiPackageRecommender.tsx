@@ -262,7 +262,7 @@ export function AiPackageRecommender() {
             </span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[var(--color-text-primary)]">
+          <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--color-text-primary)]">
             AI Event Package Recommender &amp; Upsell Revenue Engine
           </h3>
 
@@ -328,7 +328,7 @@ export function AiPackageRecommender() {
                   </div>
                 </div>
                 <div className="text-right shrink-0">
-                  <span className="text-xs font-extrabold font-mono text-emerald-700 dark:text-emerald-400 block">
+                  <span className="text-xs font-semibold font-mono text-emerald-700 dark:text-emerald-400 block">
                     {preset.expectedRevenue}
                   </span>
                   <span className="text-[10px] text-slate-500 font-mono">
@@ -510,7 +510,7 @@ export function AiPackageRecommender() {
             {/* Blueprint Header */}
             <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-3">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-black uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-primary)] font-mono">
                   Tailored Event Blueprint &amp; Financials
                 </span>
               </div>
@@ -527,7 +527,7 @@ export function AiPackageRecommender() {
             {/* Hero Price & Package Title */}
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 bg-gradient-to-br from-indigo-50/70 to-emerald-50/40 dark:from-indigo-950/40 dark:to-slate-900 p-4 rounded-xl border border-indigo-200 dark:border-indigo-800/80">
               <div>
-                <h4 className="text-lg sm:text-xl font-black text-indigo-950 dark:text-indigo-200">
+                <h4 className="text-lg sm:text-xl font-semibold text-indigo-950 dark:text-indigo-200">
                   {aiResult?.data?.packageName}
                 </h4>
                 <span className="text-xs font-bold text-[var(--color-text-secondary)] font-mono block mt-1">
@@ -536,7 +536,7 @@ export function AiPackageRecommender() {
               </div>
               <div className="text-left sm:text-right shrink-0">
                 <div className="flex items-baseline sm:justify-end gap-1.5">
-                  <span className="text-2xl sm:text-3xl font-black font-mono text-emerald-700 dark:text-emerald-400">
+                  <span className="text-2xl sm:text-3xl font-semibold font-mono text-emerald-700 dark:text-emerald-400">
                     ${financials.totalPackagePrice}
                   </span>
                   <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 font-mono bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800">
@@ -557,7 +557,7 @@ export function AiPackageRecommender() {
               </div>
               <div className="p-2.5 rounded-lg bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">
                 <span className="text-[10px] text-emerald-700 dark:text-emerald-300 font-bold block">Artisan F&amp;B</span>
-                <span className="text-xs font-extrabold text-emerald-800 dark:text-emerald-200">${financials.foodAndDrinkCost}</span>
+                <span className="text-xs font-semibold text-emerald-800 dark:text-emerald-200">${financials.foodAndDrinkCost}</span>
               </div>
               <div className="p-2.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)]">
                 <span className="text-[10px] text-slate-500 font-medium block">Shoe &amp; Gear</span>
@@ -588,7 +588,7 @@ export function AiPackageRecommender() {
             {/* Concurrency & Manager Upsell Dual Callout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div className="p-3.5 rounded-xl border border-indigo-300 dark:border-indigo-800 bg-indigo-50/70 dark:bg-indigo-950/40">
-                <span className="font-extrabold text-indigo-950 dark:text-indigo-200 flex items-center gap-1 mb-1">
+                <span className="font-semibold text-indigo-950 dark:text-indigo-200 flex items-center gap-1 mb-1">
                   <ShieldCheck className="h-3.5 w-3.5 text-indigo-600" />
                   Concurrency &amp; Lane Defense
                 </span>
@@ -598,7 +598,7 @@ export function AiPackageRecommender() {
               </div>
 
               <div className="p-3.5 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/70 dark:bg-emerald-950/40">
-                <span className="font-extrabold text-emerald-950 dark:text-emerald-200 flex items-center gap-1 mb-1">
+                <span className="font-semibold text-emerald-950 dark:text-emerald-200 flex items-center gap-1 mb-1">
                   <Flame className="h-3.5 w-3.5 text-emerald-600" />
                   High-Margin Manager Upsell
                 </span>
