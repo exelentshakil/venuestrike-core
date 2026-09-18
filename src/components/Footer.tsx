@@ -39,7 +39,7 @@ export function Footer() {
                     <span className="text-base font-semibold tracking-tight text-[var(--color-text-primary)] whitespace-nowrap">
                       VenueStrike Core
                     </span>
-                    <span className="rounded-full bg-indigo-100 dark:bg-indigo-950 px-2.5 py-0.5 text-[11px] font-mono font-bold text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                    <span className="rounded-full bg-indigo-100 dark:bg-indigo-950 px-2.5 py-0.5 text-xs font-mono font-bold text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-800 whitespace-nowrap shrink-0">
                       v2.4.0 Production MVP
                     </span>
                   </div>
@@ -53,9 +53,9 @@ export function Footer() {
               <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-2 text-xs font-mono">
                 <div className="flex items-center gap-1.5 text-indigo-700 dark:text-indigo-400 font-semibold whitespace-nowrap min-w-0">
                   <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-                  <span className="text-[11px] font-bold truncate">Lock Latency: 3.4ms</span>
+                  <span className="text-xs font-bold truncate">Lock Latency: 3.4ms</span>
                 </div>
-                <span className="inline-flex items-center rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-mono font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                <span className="inline-flex items-center rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-xs font-mono font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
                   100% Codebase Ownership
                 </span>
               </div>
@@ -69,7 +69,7 @@ export function Footer() {
             </h4>
             <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-4 text-xs">
               <div className="space-y-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-[11px] font-mono text-[var(--color-text-secondary)]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-2 text-xs font-mono text-[var(--color-text-secondary)]">
                   <div className="flex items-center gap-1.5 rounded-md bg-[var(--color-surface)] border border-[var(--color-border-subtle)] px-2.5 py-1.5 shadow-2xs font-semibold">
                     <Terminal className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
                     <span className="truncate">Next.js 15 App Router</span>
@@ -99,10 +99,10 @@ export function Footer() {
 
               {/* Compliance & SLA Verification Strip */}
               <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-2 text-xs font-mono">
-                <span className="text-[11px] text-[var(--color-text-secondary)] font-semibold truncate">
+                <span className="text-xs text-[var(--color-text-secondary)] font-semibold truncate">
                   PCI-DSS &amp; NIST AI RMF
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                <span className="inline-flex items-center gap-1 rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-xs font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
                   99.99% Peak SLA
                 </span>
               </div>
@@ -130,11 +130,11 @@ export function Footer() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 font-bold text-[var(--color-text-primary)] text-sm">
                       <span className="truncate">Shakil Ahmed</span>
-                      <span className="inline-flex items-center rounded bg-indigo-50 dark:bg-indigo-950/60 px-1.5 py-0.2 text-[10px] font-mono font-semibold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                      <span className="inline-flex items-center rounded bg-indigo-50 dark:bg-indigo-950/60 px-1.5 py-0.2 text-xs font-mono font-semibold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
                         Lead
                       </span>
                     </div>
-                    <p className="text-[11px] text-[var(--color-text-secondary)] font-mono font-medium truncate">
+                    <p className="text-xs text-[var(--color-text-secondary)] font-mono font-medium truncate">
                       Autonomous Systems &amp; High-Concurrency SaaS
                     </p>
                   </div>
@@ -148,9 +148,9 @@ export function Footer() {
               <div className="pt-3 border-t border-[var(--color-border)] flex items-center justify-between gap-1.5 text-xs font-mono">
                 <div className="flex items-center gap-1.5 text-indigo-700 dark:text-indigo-400 font-semibold min-w-0">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                  <span className="whitespace-nowrap shrink-0 text-[11px] font-bold">Securiti Certified</span>
+                  <span className="whitespace-nowrap shrink-0 text-xs font-bold">Securiti Certified</span>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
+                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-xs font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 whitespace-nowrap shrink-0">
                   <ShieldCheck className="h-3 w-3 text-indigo-600 dark:text-indigo-400" />
                   <span>Verified Partner</span>
                 </span>

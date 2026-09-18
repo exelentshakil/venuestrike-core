@@ -83,7 +83,7 @@ export function Header({
               <span className="text-sm font-bold tracking-tight text-[var(--color-text-primary)]">
                 VenueStrike
               </span>
-              <span className="text-[11px] font-semibold px-1.5 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 font-mono">
+              <span className="text-xs font-semibold px-1.5 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 font-mono">
                 Core
               </span>
             </div>
@@ -169,7 +169,7 @@ export function Header({
           >
             <Search className="h-3.5 w-3.5 text-[var(--color-text-muted)] shrink-0" />
             <span className="font-medium whitespace-nowrap">Search</span>
-            <kbd className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-1.5 py-0.5 text-[10px] font-mono font-semibold text-[var(--color-text-muted)] shrink-0">
+            <kbd className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-1.5 py-0.5 text-xs font-mono font-semibold text-[var(--color-text-muted)] shrink-0">
               ⌘K
             </kbd>
           </button>

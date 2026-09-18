@@ -15,6 +15,7 @@ import {
   Server,
   Terminal,
   Shield,
+  ShieldCheck,
   CreditCard,
   Building,
   Users,
@@ -111,7 +112,7 @@ export function OperatorBackOffice() {
               Multi-Location Rule Engine
             </span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
+          <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--color-text-primary)]">
             Pricing Rules, Schedules &amp; Hardware Integrations
           </h3>
           <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] mt-1 max-w-3xl leading-relaxed">
@@ -175,10 +176,11 @@ export function OperatorBackOffice() {
       </div>
 
       {/* 2-Column Core: Dynamic Pricing Configuration (Left) + Hardware Integrations (Right) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-5 items-stretch">
         {/* Left Column: Dynamic Pricing Engine (5 cols) */}
-        <div className="lg:col-span-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 space-y-4">
-          <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-3">
+        <div className="lg:col-span-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-3">
             <div>
               <span className="text-xs font-bold text-[var(--color-text-primary)] uppercase tracking-wider font-mono flex items-center gap-1.5">
                 <DollarSign className="h-3.5 w-3.5 text-emerald-600" />
@@ -286,10 +288,20 @@ export function OperatorBackOffice() {
               <span className="font-bold">+$38,400 / mo</span>
             </div>
           </div>
+          </div>
+
+          {/* Institutional Hardware Pinsetter SLA Guarantee */}
+          <div className="mt-4 pt-3.5 border-t border-[var(--color-border)] flex items-center justify-between text-xs font-mono text-[var(--color-text-secondary)]">
+            <span className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-medium">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+              PCI-DSS &bull; Sub-15ms Hardware Socket
+            </span>
+            <span className="text-xs text-slate-500 font-medium">Zero Lane Lock Jitter</span>
+          </div>
         </div>
 
         {/* Right Column: Hardware & POS Integrations (7 cols) */}
-        <div className="lg:col-span-7 space-y-3">
+        <div className="lg:col-span-7 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 sm:p-5 flex flex-col justify-between shadow-xs">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] font-mono flex items-center gap-1.5">
               <Cpu className="h-3.5 w-3.5 text-indigo-600" />

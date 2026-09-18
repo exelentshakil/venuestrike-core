@@ -300,7 +300,7 @@ export function AiPackageRecommender() {
             <Zap className="h-3.5 w-3.5 text-amber-500" />
             1-Click Venue Revenue Scenarios (Test Real Operator Yields):
           </span>
-          <span className="text-[11px] font-mono font-semibold text-[var(--color-text-secondary)] hidden sm:inline">
+          <span className="text-xs font-mono font-semibold text-[var(--color-text-secondary)] hidden sm:inline">
             Click to simulate instant package pricing
           </span>
         </div>
@@ -323,7 +323,7 @@ export function AiPackageRecommender() {
                   <div className="text-xs font-bold text-[var(--color-text-primary)] truncate">
                     {preset.label}
                   </div>
-                  <div className="text-[11px] text-[var(--color-text-secondary)] truncate mt-0.5">
+                  <div className="text-xs text-[var(--color-text-secondary)] truncate mt-0.5">
                     {preset.durationHours}h play • {preset.partySize} guests
                   </div>
                 </div>
@@ -331,7 +331,7 @@ export function AiPackageRecommender() {
                   <span className="text-xs font-semibold font-mono text-emerald-700 dark:text-emerald-400 block">
                     {preset.expectedRevenue}
                   </span>
-                  <span className="text-[10px] text-slate-500 font-mono">
+                  <span className="text-xs text-slate-500 font-mono">
                     Pkg Value
                   </span>
                 </div>
@@ -351,7 +351,7 @@ export function AiPackageRecommender() {
                 <Sliders className="h-3.5 w-3.5 text-indigo-600" />
                 Event Booking Parameters
               </span>
-              <span className="text-[11px] font-mono text-slate-600 dark:text-slate-400">
+              <span className="text-xs font-mono text-slate-600 dark:text-slate-400">
                 Front-Desk Intake
               </span>
             </div>
@@ -477,11 +477,11 @@ export function AiPackageRecommender() {
                   <CreditCard className="h-3.5 w-3.5 text-emerald-600" />
                   Stripe Terminal Deposit Hold
                 </span>
-                <span className="text-[10px] bg-emerald-200 dark:bg-emerald-900 px-1.5 py-0.2 rounded font-mono font-bold">
+                <span className="text-xs bg-emerald-200 dark:bg-emerald-900 px-1.5 py-0.2 rounded font-mono font-bold">
                   Zero No-Shows
                 </span>
               </div>
-              <p className="text-[11px] text-emerald-900 dark:text-emerald-300 leading-tight font-sans">
+              <p className="text-xs text-emerald-900 dark:text-emerald-300 leading-tight font-sans">
                 Requires 40–50% upfront pre-authorized card hold before lane release, eliminating unpaid group cancellations.
               </p>
             </div>
@@ -552,19 +552,19 @@ export function AiPackageRecommender() {
             {/* Financials Breakdown Strip */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono">
               <div className="p-2.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)]">
-                <span className="text-[10px] text-slate-500 font-medium block">Lane / Room Rental</span>
+                <span className="text-xs text-slate-500 font-medium block">Lane / Room Rental</span>
                 <span className="text-xs font-bold text-[var(--color-text-primary)]">${financials.playRentalCost}</span>
               </div>
               <div className="p-2.5 rounded-lg bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800">
-                <span className="text-[10px] text-emerald-700 dark:text-emerald-300 font-bold block">Artisan F&amp;B</span>
+                <span className="text-xs text-emerald-700 dark:text-emerald-300 font-bold block">Artisan F&amp;B</span>
                 <span className="text-xs font-semibold text-emerald-800 dark:text-emerald-200">${financials.foodAndDrinkCost}</span>
               </div>
               <div className="p-2.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)]">
-                <span className="text-[10px] text-slate-500 font-medium block">Shoe &amp; Gear</span>
+                <span className="text-xs text-slate-500 font-medium block">Shoe &amp; Gear</span>
                 <span className="text-xs font-bold text-[var(--color-text-primary)]">${financials.shoeOrGearRental || 80}</span>
               </div>
               <div className="p-2.5 rounded-lg bg-[var(--color-panel-subtle)] border border-[var(--color-border)]">
-                <span className="text-[10px] text-slate-500 font-medium block">Tax &amp; Service Fee</span>
+                <span className="text-xs text-slate-500 font-medium block">Tax &amp; Service Fee</span>
                 <span className="text-xs font-bold text-[var(--color-text-primary)]">${financials.serviceAndTax || 225}</span>
               </div>
             </div>

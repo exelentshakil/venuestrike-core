@@ -269,7 +269,7 @@ describe('VenueStrike Core Concurrency Shield', () => {
               PostgreSQL DDL &bull; Toast POS Webhook &bull; Pinsetter Socket
             </span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
+          <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--color-text-primary)]">
             Production Architecture Blueprints
           </h3>
           <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] mt-1 max-w-3xl leading-relaxed">

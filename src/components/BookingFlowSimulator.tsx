@@ -454,11 +454,11 @@ export function BookingFlowSimulator() {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[11px] font-mono text-slate-500">
+                    <span className="text-xs font-mono text-slate-500">
                       Step 0{p.step}
                     </span>
                     <span
-                      className={`text-[10px] font-mono font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${
+                      className={`text-xs font-mono font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${
                         isActive
                           ? 'bg-indigo-600 text-white border-indigo-600'
                           : 'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700'
@@ -479,7 +479,7 @@ export function BookingFlowSimulator() {
           <div className="rounded-xl border border-[var(--color-border)] bg-white dark:bg-slate-900 p-5 shadow-xs space-y-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[var(--color-border)] pb-3">
               <div>
-                <div className="text-[11px] font-mono font-medium uppercase tracking-wider text-indigo-700 dark:text-indigo-400 mb-1">
+                <div className="text-xs font-mono font-medium uppercase tracking-wider text-indigo-700 dark:text-indigo-400 mb-1">
                   Phase 0{currentPhase.step} Operational Breakdown
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
@@ -499,7 +499,7 @@ export function BookingFlowSimulator() {
 
             {/* Animated Architecture Pipeline Visual */}
             <div className="relative rounded-xl border border-slate-800 bg-slate-950 text-white p-4 overflow-hidden">
-              <div className="flex items-center justify-between text-[11px] font-mono border-b border-slate-800 pb-2 mb-3 text-slate-400">
+              <div className="flex items-center justify-between text-xs font-mono border-b border-slate-800 pb-2 mb-3 text-slate-400">
                 <span className="flex items-center gap-1.5 text-indigo-400 font-semibold">
                   <Terminal className="h-3.5 w-3.5" />
                   Live Kernel Lock Bus: venue_locks_v2 (Austin Downtown)
@@ -516,12 +516,12 @@ export function BookingFlowSimulator() {
                     ? 'border-rose-500 bg-rose-950/40 ring-1 ring-rose-500'
                     : 'border-slate-800 bg-slate-900/60'
                 }`}>
-                  <div className="text-[10px] font-mono uppercase text-slate-400 mb-1">Incoming Ingestion</div>
+                  <div className="text-xs font-mono uppercase text-slate-400 mb-1">Incoming Ingestion</div>
                   <div className="text-xs font-semibold text-white mb-1 flex items-center justify-center gap-1.5">
                     <Users className="h-3.5 w-3.5 text-rose-400" />
                     50 Concurrent Threads
                   </div>
-                  <div className="text-[10px] font-mono text-slate-400">
+                  <div className="text-xs font-mono text-slate-400">
                     Front Desk (12) + 49 Mobile
                   </div>
                 </div>
@@ -531,12 +531,12 @@ export function BookingFlowSimulator() {
                     ? 'border-indigo-500 bg-indigo-950/40 ring-1 ring-indigo-500'
                     : 'border-slate-800 bg-slate-900/60'
                 }`}>
-                  <div className="text-[10px] font-mono uppercase text-slate-400 mb-1">Postgres Advisory Lock</div>
+                  <div className="text-xs font-mono uppercase text-slate-400 mb-1">Postgres Advisory Lock</div>
                   <div className="text-xs font-semibold text-indigo-300 mb-1 flex items-center justify-center gap-1.5">
                     <Lock className="h-3.5 w-3.5 text-indigo-400" />
                     pg_try_advisory_xact_lock
                   </div>
-                  <div className="text-[10px] font-mono text-emerald-400 font-medium">
+                  <div className="text-xs font-mono text-emerald-400 font-medium">
                     Exclusive Token: VS_LOCK_SAT8PM_01E110
                   </div>
                 </div>
@@ -546,19 +546,19 @@ export function BookingFlowSimulator() {
                     ? 'border-emerald-500 bg-emerald-950/40 ring-1 ring-emerald-500'
                     : 'border-slate-800 bg-slate-900/60'
                 }`}>
-                  <div className="text-[10px] font-mono uppercase text-slate-400 mb-1">Resolution Outcome</div>
+                  <div className="text-xs font-mono uppercase text-slate-400 mb-1">Resolution Outcome</div>
                   <div className="text-xs font-semibold text-emerald-300 mb-1 flex items-center justify-center gap-1.5">
                     <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
                     1 Winner &bull; 49 Rerouted
                   </div>
-                  <div className="text-[10px] font-mono text-slate-300">
+                  <div className="text-xs font-mono text-slate-300">
                     0 Double Bookings &bull; $1,475 Saved
                   </div>
                 </div>
               </div>
 
               {/* Technical Mechanism Code Strip */}
-              <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono">
+              <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
                 <div className="text-slate-300">
                   <span className="text-amber-400 font-semibold">Mechanism: </span>
                   {currentPhase.technicalMechanism}
@@ -584,7 +584,7 @@ export function BookingFlowSimulator() {
                     <span className="text-xs font-semibold uppercase tracking-wider text-emerald-950 dark:text-emerald-200 font-mono">
                       AI Concurrency Post-Mortem &amp; Operator Diagnosis
                     </span>
-                    <Badge className="bg-emerald-700 text-white font-mono text-[10px] px-2 py-0 font-medium">
+                    <Badge className="bg-emerald-700 text-white font-mono text-xs px-2 py-0 font-medium">
                       {raceResults.aiDiagnosis.provider === 'OPENAI' ? 'OpenAI gpt-4o-mini' : raceResults.aiDiagnosis.provider === 'GEMINI' ? 'Gemini 2.0 Flash' : 'Deterministic Rules'}
                     </Badge>
                   </div>
@@ -604,7 +604,7 @@ export function BookingFlowSimulator() {
             {/* 4 Callout Blocks */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-mono">
               <div className="p-3.5 rounded-xl border border-[var(--color-border)] bg-white dark:bg-slate-900 shadow-2xs space-y-1">
-                <span className="text-[10px] font-medium text-slate-500 uppercase tracking-wider block">
+                <span className="text-xs font-medium text-slate-500 uppercase tracking-wider block">
                   01 &bull; Saturday Crisis Context
                 </span>
                 <p className="text-slate-700 dark:text-slate-300 font-sans font-normal text-xs leading-relaxed">
@@ -613,7 +613,7 @@ export function BookingFlowSimulator() {
               </div>
 
               <div className="p-3.5 rounded-xl border border-[var(--color-border)] bg-white dark:bg-slate-900 shadow-2xs space-y-1">
-                <span className="text-[10px] font-medium text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block">
+                <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block">
                   02 &bull; Advisory Lock Mutex
                 </span>
                 <p className="text-slate-700 dark:text-slate-300 font-sans font-normal text-xs leading-relaxed">
@@ -622,7 +622,7 @@ export function BookingFlowSimulator() {
               </div>
 
               <div className="p-3.5 rounded-xl border border-[var(--color-border)] bg-white dark:bg-slate-900 shadow-2xs space-y-1">
-                <span className="text-[10px] font-medium text-rose-600 dark:text-rose-400 uppercase tracking-wider block">
+                <span className="text-xs font-medium text-rose-600 dark:text-rose-400 uppercase tracking-wider block">
                   03 &bull; Disaster Averted
                 </span>
                 <p className="text-slate-700 dark:text-slate-300 font-sans font-normal text-xs leading-relaxed">
@@ -631,7 +631,7 @@ export function BookingFlowSimulator() {
               </div>
 
               <div className="p-3.5 rounded-xl border border-[var(--color-border)] bg-white dark:bg-slate-900 shadow-2xs space-y-1">
-                <span className="text-[10px] font-medium text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">
+                <span className="text-xs font-medium text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">
                   04 &bull; Reroute Yield &amp; Policy
                 </span>
                 <p className="text-slate-700 dark:text-slate-300 font-sans font-normal text-xs leading-relaxed">
@@ -645,7 +645,7 @@ export function BookingFlowSimulator() {
                 <strong className="font-semibold text-indigo-900 dark:text-indigo-300">Operator Strategic Recommendation: </strong>
                 <span>{raceResults.aiDiagnosis.operatorRecommendation}</span>
               </div>
-              <span className="text-[11px] font-medium text-indigo-700 dark:text-indigo-400 shrink-0 whitespace-nowrap">
+              <span className="text-xs font-medium text-indigo-700 dark:text-indigo-400 shrink-0 whitespace-nowrap">
                 Deposit Rule: 50% Pre-Auth Hold
               </span>
             </div>
@@ -719,7 +719,7 @@ export function BookingFlowSimulator() {
                     }`}
                   >
                     <div className="flex items-center gap-2 truncate min-w-0">
-                      <span className={`px-2 py-0.5 rounded-md text-[10px] font-semibold shrink-0 ${
+                      <span className={`px-2 py-0.5 rounded-md text-xs font-semibold shrink-0 ${
                         isAcquired ? 'bg-emerald-600 text-white' : 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                       }`}>
                         {t.threadId}
@@ -739,7 +739,7 @@ export function BookingFlowSimulator() {
                           &rarr; {t.alternativeSuggested || 'Lane 05'}
                         </span>
                       )}
-                      <span className="text-slate-400 font-mono text-[10px] whitespace-nowrap">
+                      <span className="text-slate-400 font-mono text-xs whitespace-nowrap">
                         {t.latencyMs}ms
                       </span>
                     </div>
@@ -797,7 +797,7 @@ export function BookingFlowSimulator() {
         </div>
 
         {/* 2-Column Balanced Workbench: Floor Map Grid (7 cols) + Front Desk Intake (5 cols) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           {/* Left Column: Interactive Resource Cards (7 cols) */}
           <div className="lg:col-span-7 space-y-4">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -830,7 +830,7 @@ export function BookingFlowSimulator() {
                       </span>
                       <Badge
                         variant="outline"
-                        className={`text-[9px] px-1.5 py-0 font-mono uppercase font-medium ${
+                        className={`text-xs px-1.5 py-0 font-mono uppercase font-medium ${
                           isTargetLane
                             ? 'border-indigo-400 text-indigo-900 dark:text-indigo-200 bg-indigo-100 dark:bg-indigo-950'
                             : isAvailable
@@ -844,7 +844,7 @@ export function BookingFlowSimulator() {
                       </Badge>
                     </div>
 
-                    <div className="flex items-center justify-between gap-1 mt-1 text-[11px] font-mono">
+                    <div className="flex items-center justify-between gap-1 mt-1 text-xs font-mono">
                       <span className="text-slate-600 dark:text-slate-400 font-medium truncate">
                         {item.currentGuest
                           ? item.currentGuest
@@ -855,13 +855,13 @@ export function BookingFlowSimulator() {
                           : `Cap: ${item.capacity}`}
                       </span>
                       {item.divertedCount && item.divertedCount > 0 && (
-                        <span className="text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-1.5 py-0.2 rounded border border-emerald-300 dark:border-emerald-800 shrink-0">
+                        <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-1.5 py-0.2 rounded border border-emerald-300 dark:border-emerald-800 shrink-0">
                           +{item.divertedCount}
                         </span>
                       )}
                     </div>
 
-                    <div className="flex items-center justify-between text-[10px] text-slate-500 font-mono pt-1 border-t border-[var(--color-border)]">
+                    <div className="flex items-center justify-between text-xs text-slate-500 font-mono pt-1 border-t border-[var(--color-border)]">
                       <span className="capitalize">{item.type}</span>
                       {isTargetLane ? (
                         <span className="text-indigo-700 dark:text-indigo-400 font-medium flex items-center gap-0.5">
@@ -897,7 +897,7 @@ export function BookingFlowSimulator() {
               {/* Time Slot & Party Size */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-medium text-slate-700 dark:text-slate-300 block mb-1">
+                  <label className="text-xs font-medium text-slate-700 dark:text-slate-300 block mb-1">
                     Time Window (Peak)
                   </label>
                   <div className="px-2.5 py-2 rounded-lg border border-[var(--color-border)] bg-white dark:bg-slate-900 text-xs font-mono font-medium flex items-center gap-1.5 text-slate-900 dark:text-white">
@@ -906,7 +906,7 @@ export function BookingFlowSimulator() {
                   </div>
                 </div>
                 <div>
-                  <label className="text-[11px] font-medium text-slate-700 dark:text-slate-300 block mb-1">
+                  <label className="text-xs font-medium text-slate-700 dark:text-slate-300 block mb-1">
                     Guest Count
                   </label>
                   <div className="flex items-center gap-2">
@@ -931,7 +931,7 @@ export function BookingFlowSimulator() {
 
               {/* Package Selector */}
               <div className="space-y-2">
-                <label className="text-[11px] font-medium text-slate-700 dark:text-slate-300 block">
+                <label className="text-xs font-medium text-slate-700 dark:text-slate-300 block">
                   Select Entertainment &amp; F&amp;B Package
                 </label>
                 <div className="space-y-2">
@@ -952,7 +952,7 @@ export function BookingFlowSimulator() {
                             <span className="text-xs font-medium text-slate-900 dark:text-white">
                               {pkg.name}
                             </span>
-                            <span className="text-[9px] font-medium px-1.5 py-0.2 rounded bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                            <span className="text-xs font-medium px-1.5 py-0.2 rounded bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
                               {pkg.tag}
                             </span>
                           </div>
@@ -960,7 +960,7 @@ export function BookingFlowSimulator() {
                             ${pkg.pricePerPerson}/guest
                           </span>
                         </div>
-                        <div className="mt-1 text-[11px] text-slate-500 leading-tight">
+                        <div className="mt-1 text-xs text-slate-500 leading-tight">
                           {pkg.food} &bull; {pkg.drinks}
                         </div>
                       </div>
@@ -982,11 +982,11 @@ export function BookingFlowSimulator() {
                   </span>
                   <span>${depositDue}.00</span>
                 </div>
-                <div className="flex items-center justify-between text-[11px] text-slate-400">
+                <div className="flex items-center justify-between text-xs text-slate-400">
                   <span>Balance Due at Venue Front Desk</span>
                   <span>${venueBalance}.00</span>
                 </div>
-                <div className="mt-2 pt-2 border-t border-dashed border-[var(--color-border)] text-[11px] text-emerald-700 dark:text-emerald-400 flex items-center justify-between font-medium">
+                <div className="mt-2 pt-2 border-t border-dashed border-[var(--color-border)] text-xs text-emerald-700 dark:text-emerald-400 flex items-center justify-between font-medium">
                   <span>Estimated Gross Margin:</span>
                   <span>${Math.round(totalCost * 0.68)} (68% margin)</span>
                 </div>
@@ -1006,10 +1006,10 @@ export function BookingFlowSimulator() {
                       {holdTimer}s
                     </span>
                   </div>
-                  <div className="text-[11px] text-amber-800 dark:text-amber-400 truncate">
+                  <div className="text-xs text-amber-800 dark:text-amber-400 truncate">
                     Lock Token: <span className="font-semibold">{activeLockToken || 'VS_LOCK_SAT8PM_01E110'}</span>
                   </div>
-                  <div className="text-[10px] text-amber-700 dark:text-amber-400">
+                  <div className="text-xs text-amber-700 dark:text-amber-400">
                     Front Desk iPad has exclusive reservation rights. Competing online checkouts are gracefully rerouted.
                   </div>
                 </div>
