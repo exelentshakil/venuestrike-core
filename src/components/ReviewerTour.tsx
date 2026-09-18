@@ -9,10 +9,7 @@ import {
   ShieldAlert,
   Sliders,
   BarChart3,
-  ShieldCheck,
-  Activity,
   ArrowRight,
-  Zap,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -26,16 +23,16 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
 
   const evaluationPaths = [
     {
-      id: 'bookings',
-      badge: 'Step 1 • Guest Booking Flow',
-      title: 'Real-Time Floor Map & Holds',
-      desc: '16 bowling lanes, 8 dartboards, and 2 VIP lounges with 120-second optimistic checkout holds and automatic F&B bundle attachments.',
-      actionLabel: 'Explore Floor Map',
-      icon: LayoutGrid,
+      id: 'ai-planner',
+      badge: 'Step 1 • Revenue Generator',
+      title: 'AI Event Package Recommender',
+      desc: 'Turn corporate inquiries into $1,475–$2,890 event packages with 48.5% F&B margin attach, pre-paid deposits, and automated lane pairing.',
+      actionLabel: 'Build Event Package',
+      icon: Sparkles,
     },
     {
       id: 'concurrency',
-      badge: 'Step 2 • Peak Reliability Hook',
+      badge: 'Step 2 • Peak Concurrency Hook',
       title: '50-Thread Peak Rush Mutex Test',
       desc: 'Simulate 50 parallel Saturday night requests competing for the exact same lane. PostgreSQL transaction advisory locks guarantee exactly 1 winner and 0 double-bookings.',
       actionLabel: 'Run 50-Thread Test',
@@ -43,15 +40,15 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
     },
     {
       id: 'pricing',
-      badge: 'Step 3 • Operator Rules & POS',
+      badge: 'Step 3 • Operator Yield & POS',
       title: 'Multi-Location Pricing & Hardware',
-      desc: 'Configure peak (1.8x–2.5x) multipliers, per-hour vs per-game rules across 4 venues, and inspect live webhooks for Toast POS and Brunswick/QubicaAMF pinsetters.',
+      desc: 'Configure peak (1.8x–2.5x) multipliers (+$38.4k/mo lift), per-hour vs per-game rules across 4 venues, and inspect live webhooks for Toast POS and Brunswick/QubicaAMF pinsetters.',
       actionLabel: 'Inspect Operator Rules',
       icon: Sliders,
     },
     {
       id: 'reporting',
-      badge: 'Step 4 • Manager Reporting',
+      badge: 'Step 4 • Manager Telemetry',
       title: 'Utilization & F&B Attach Telemetry',
       desc: 'Real-time RevPASH ($194.50/hr peak), lane utilization matrix (96.2% peak), 48.5% F&B attach rates, and a live Toast POS transaction stream.',
       actionLabel: 'View Manager Reports',
@@ -77,7 +74,7 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
             How to Evaluate VenueStrike Core: Zero Peak Double-Bookings
           </h2>
           <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] mt-1 max-w-4xl leading-relaxed font-normal">
-            Engineered specifically for entertainment venues (bowling centers, darts bars, and social clubs). Solves the core Saturday night nightmare where 12 guests arrive at the front desk due to concurrent race conditions.
+            Engineered specifically for multi-unit entertainment venues (bowling centers, darts bars, and social clubs). Solves the core Saturday night operational risk where concurrent bookings cause double-booked lanes and front-desk walk-in collisions.
           </p>
         </div>
 
@@ -105,24 +102,24 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
 
       {/* Collapsible Evaluation Paths */}
       {!isCollapsed && (
-        <div className="mt-5 space-y-4">
-          {/* 4 Interactive Evaluation Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
+        <div className="mt-5">
+          {/* 4 Clean, Balanced Evaluation Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {evaluationPaths.map((path) => {
               const Icon = path.icon;
               return (
                 <div
                   key={path.id}
-                  className="group relative flex flex-col justify-between rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 transition-all hover:border-indigo-400 hover:bg-[var(--color-surface)] shadow-xs hover:shadow-card"
+                  className="group relative flex flex-col justify-between rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 transition-all hover:border-indigo-400 hover:bg-[var(--color-surface)] shadow-xs hover:shadow-card"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <div className="flex items-center justify-between gap-2 mb-3">
                       <span className="inline-flex items-center text-xs font-bold text-indigo-900 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/50 px-2.5 py-0.5 rounded-md border border-indigo-300 dark:border-indigo-800 whitespace-nowrap shrink-0 shadow-xs">
                         {path.badge}
                       </span>
                       <Icon className="h-4 w-4 text-[var(--color-text-secondary)] group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" />
                     </div>
-                    <h3 className="text-sm font-extrabold text-[var(--color-text-primary)] mb-1.5">
+                    <h3 className="text-sm font-extrabold text-[var(--color-text-primary)] mb-2">
                       {path.title}
                     </h3>
                     <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed font-normal">
@@ -130,7 +127,7 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-2.5 border-t border-[var(--color-border-subtle)]">
+                  <div className="mt-5 pt-3 border-t border-[var(--color-border-subtle)]">
                     <button
                       onClick={() => onNavigate(path.id)}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors whitespace-nowrap shrink-0"
@@ -142,82 +139,6 @@ export function ReviewerTour({ onNavigate, onOpenChaosModal }: ReviewerTourProps
                 </div>
               );
             })}
-          </div>
-
-          {/* High-Contrast Command Console Summary Strip */}
-          <div className="rounded-xl bg-slate-950 text-white p-3.5 sm:p-4 shadow-card border border-slate-800 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4">
-            {/* Header on mobile */}
-            <div className="sm:hidden flex items-center gap-2.5">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 shadow-xs">
-                <ShieldCheck className="h-4 w-4" />
-              </div>
-              <span className="font-mono font-bold text-indigo-300 uppercase tracking-wider text-[11px] whitespace-nowrap shrink-0">
-                Peak Reliability Standards
-              </span>
-            </div>
-
-            {/* Content Area */}
-            <div className="flex items-stretch justify-between gap-3 sm:items-center sm:gap-3.5 flex-1 min-w-0">
-              {/* Left Side: Desktop Header + Micro-Pills */}
-              <div className="space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:gap-3 flex-1 min-w-0">
-                <div className="hidden sm:flex items-center gap-2.5 shrink-0">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 shadow-xs">
-                    <ShieldCheck className="h-4.5 w-4.5" />
-                  </div>
-                  <span className="font-mono font-bold text-indigo-300 uppercase tracking-wider text-[11px] whitespace-nowrap shrink-0">
-                    Peak Reliability Standards
-                  </span>
-                </div>
-
-                {/* Standards Micro-Pills */}
-                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-1.5 text-xs">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-900 border border-slate-700 text-slate-100 text-[10px] sm:text-[11px] font-mono font-semibold whitespace-nowrap w-fit">
-                    Postgres Advisory Locks
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-900 border border-slate-700 text-slate-100 text-[10px] sm:text-[11px] font-mono font-semibold whitespace-nowrap w-fit">
-                    120s TTL Optimistic Holds
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-slate-900 border border-slate-700 text-slate-100 text-[10px] sm:text-[11px] font-mono font-semibold whitespace-nowrap w-fit">
-                    Toast POS Webhook Sync
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-indigo-950/60 border border-indigo-700 text-indigo-200 text-[10px] sm:text-[11px] font-mono font-bold whitespace-nowrap w-fit">
-                    Zero Peak Double-Bookings
-                  </span>
-                </div>
-              </div>
-
-              {/* Right Side: SLA Trust Blurb */}
-              <div className="flex flex-col items-center justify-center p-2.5 sm:px-3 sm:py-0 sm:h-9 rounded-xl sm:rounded-lg bg-gradient-to-b from-indigo-950/60 to-slate-900 border border-indigo-500/30 shadow-xs shrink-0 w-28 sm:w-auto text-center self-stretch sm:self-auto sm:flex-row sm:gap-2.5">
-                <div className="relative flex h-8 w-8 sm:h-6 sm:w-6 items-center justify-center rounded-lg sm:rounded-md bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 mb-1 sm:mb-0 shrink-0">
-                  <Activity className="h-4 w-4 sm:h-3.5 sm:w-3.5 text-indigo-400" />
-                  <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                </div>
-                <div className="space-y-0.5 sm:space-y-0 sm:text-left flex flex-col justify-center">
-                  <div className="text-[10px] sm:text-[9px] font-mono font-bold text-indigo-400 uppercase tracking-wider leading-none">
-                    Peak SLA
-                  </div>
-                  <div className="text-xs sm:text-[11px] font-mono font-extrabold text-white leading-tight">
-                    99.99%
-                  </div>
-                  <div className="text-[9px] font-mono text-indigo-300/80 leading-none sm:hidden">
-                    Guaranteed
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <Button
-              size="sm"
-              onClick={() => onNavigate('concurrency')}
-              className="h-9 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs whitespace-nowrap shrink-0 border border-indigo-500/40 w-full sm:w-auto px-3.5 rounded-lg justify-center inline-flex items-center gap-1.5"
-            >
-              <Zap className="h-3.5 w-3.5 text-indigo-200 shrink-0" />
-              <span>Simulate Peak Rush</span>
-            </Button>
           </div>
         </div>
       )}

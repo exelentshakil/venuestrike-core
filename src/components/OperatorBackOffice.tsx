@@ -273,13 +273,17 @@ export function OperatorBackOffice() {
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900 text-white text-xs font-mono space-y-1">
+          <div className="p-3.5 rounded-xl bg-slate-900 text-white text-xs font-mono space-y-2 shadow-xs">
             <div className="flex items-center justify-between text-emerald-400 font-bold">
-              <span>Calculated Peak Lane Yield</span>
-              <span>${Math.round(65 * peakMultiplier)}/hour</span>
+              <span className="text-xs">Calculated Peak Lane Yield</span>
+              <span className="text-base">${Math.round(65 * peakMultiplier)}/hour</span>
             </div>
-            <div className="text-[10px] text-slate-400">
+            <div className="text-[11px] text-slate-300">
               Off-peak base: $52/hr • Fri 5pm-1am &amp; Sat All-Day: ${Math.round(65 * peakMultiplier)}/hr
+            </div>
+            <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-emerald-300">
+              <span>Monthly Surge Lift across 16 Lanes:</span>
+              <span className="font-bold">+$38,400 / mo</span>
             </div>
           </div>
         </div>

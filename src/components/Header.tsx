@@ -49,17 +49,18 @@ export function Header({
 
   // Primary high-signal navigation anchors with sleek typography labels
   const primaryNavItems = [
+    { id: 'ai-planner', label: 'AI Package Builder', icon: Sparkles, featured: true },
     { id: 'bookings', label: 'Floor Map', icon: LayoutGrid },
     { id: 'concurrency', label: 'Peak Rush Lock', icon: ShieldAlert },
     { id: 'pricing', label: 'Pricing Rules', icon: DollarSign },
-    { id: 'integrations', label: 'POS & Scoring', icon: Cpu },
     { id: 'reporting', label: 'Reporting', icon: BarChart3 },
   ];
 
   // Secondary navigation anchors in sleek "More" dropdown
   const secondaryNavItems = [
-    { id: 'ai-planner', label: 'AI Package Builder', icon: Sparkles, desc: 'Real OpenAI + Gemini event builder' },
+    { id: 'integrations', label: 'POS & Scoring Webhooks', icon: Cpu, desc: 'Toast POS & Brunswick sync' },
     { id: 'metrics', label: 'Venue SaaS Telemetry', icon: BarChart3, desc: 'Peak night throughput & lock metrics' },
+    { id: 'roi', label: 'Economics & Cloud Infra', icon: DollarSign, desc: 'Revenue protected vs AWS bill' },
     { id: 'briefing', label: 'Executive Briefing', icon: Zap, desc: 'Defensibility against front desk double-bookings' },
   ];
 
@@ -99,13 +100,16 @@ export function Header({
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-2.5 h-8 inline-flex items-center text-[13px] font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
+                  className={`px-2.5 h-8 inline-flex items-center gap-1 text-[13px] font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
                     isActive
                       ? 'bg-[var(--color-panel-subtle)] text-[var(--color-text-primary)] font-semibold shadow-2xs border border-[var(--color-border)]'
+                      : item.featured
+                      ? 'border border-indigo-300 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 bg-indigo-50/80 dark:bg-indigo-950/40 hover:bg-indigo-100 font-semibold shadow-2xs'
                       : 'border border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]/70'
                   }`}
                 >
-                  {item.label}
+                  {item.featured && <Sparkles className="h-3 w-3 text-indigo-600 dark:text-indigo-400 shrink-0" />}
+                  <span>{item.label}</span>
                 </button>
               );
             })}
