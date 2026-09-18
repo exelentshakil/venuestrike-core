@@ -47,12 +47,12 @@ export function Header({
 }: HeaderProps) {
   const { theme, setTheme } = useTheme();
 
-  // Primary high-signal navigation anchors with sleek typography labels
+  // Primary high-signal navigation anchors with sleek typography labels (<400px budget)
   const primaryNavItems = [
-    { id: 'ai-planner', label: 'AI Package Builder', icon: Sparkles, featured: true },
-    { id: 'concurrency', label: 'Peak Rush Lock', icon: ShieldAlert },
+    { id: 'ai-planner', label: 'AI Packages', icon: Sparkles },
+    { id: 'concurrency', label: 'Peak Mutex', icon: ShieldAlert },
     { id: 'bookings', label: 'Floor Map', icon: LayoutGrid },
-    { id: 'pricing', label: 'Pricing Rules', icon: DollarSign },
+    { id: 'pricing', label: 'Pricing', icon: DollarSign },
     { id: 'reporting', label: 'Reporting', icon: BarChart3 },
   ];
 
@@ -100,15 +100,12 @@ export function Header({
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-2.5 h-8 inline-flex items-center gap-1 text-[13px] font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
+                  className={`px-2.5 h-8 inline-flex items-center text-xs sm:text-[13px] font-medium rounded-md transition-colors whitespace-nowrap shrink-0 ${
                     isActive
                       ? 'bg-[var(--color-panel-subtle)] text-[var(--color-text-primary)] font-semibold shadow-2xs border border-[var(--color-border)]'
-                      : item.featured
-                      ? 'border border-indigo-300 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 bg-indigo-50/80 dark:bg-indigo-950/40 hover:bg-indigo-100 font-semibold shadow-2xs'
                       : 'border border-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-panel-subtle)]/70'
                   }`}
                 >
-                  {item.featured && <Sparkles className="h-3 w-3 text-indigo-600 dark:text-indigo-400 shrink-0" />}
                   <span>{item.label}</span>
                 </button>
               );
@@ -180,7 +177,7 @@ export function Header({
               <Button
                 variant="outline"
                 size="sm"
-                className="hidden lg:inline-flex h-8 items-center gap-1.5 text-xs font-medium border-[var(--color-border)] bg-[var(--color-surface)] hover:bg-[var(--color-panel-subtle)] px-2.5 whitespace-nowrap shadow-2xs shrink-0"
+                className="hidden xl:inline-flex h-8 items-center gap-1.5 text-xs font-medium border-[var(--color-border)] bg-[var(--color-surface)] hover:bg-[var(--color-panel-subtle)] px-2.5 whitespace-nowrap shadow-2xs shrink-0"
               >
                 <SlidersHorizontal className="h-3.5 w-3.5 text-[var(--color-text-muted)] shrink-0" />
                 <span className="whitespace-nowrap">Diagnostics</span>

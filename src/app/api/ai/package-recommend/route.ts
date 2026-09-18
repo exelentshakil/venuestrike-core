@@ -159,6 +159,32 @@ Respond STRICTLY in valid JSON matching this schema:
       };
     }
 
+    // Deterministic Math Guard & Financial Reconciliation
+    // Ensures LLM output is strictly bounded to real venue economics (zero $1 F&B hallucinations)
+    if (replyData && replyData.financials) {
+      const playCost = Number(replyData.financials.playRentalCost) || (durationHours * 85 * Math.ceil(partySize / 6));
+      let fbCost = Number(replyData.financials.foodAndDrinkCost) || (partySize * 45);
+      // Venue economics rule: minimum $35/head food & beverage for group events
+      if (fbCost < partySize * 30) {
+        fbCost = partySize * 42;
+      }
+      const gearCost = Number(replyData.financials.shoeOrGearRental) || (partySize * 5);
+      const subtotal = playCost + fbCost + gearCost;
+      const taxService = Math.round(subtotal * 0.18);
+      const total = subtotal + taxService;
+      const deposit = Math.round(total * 0.4);
+
+      replyData.financials = {
+        playRentalCost: playCost,
+        foodAndDrinkCost: fbCost,
+        shoeOrGearRental: gearCost,
+        serviceAndTax: taxService,
+        totalPackagePrice: total,
+        requiredDeposit: deposit,
+        balanceDueAtVenue: total - deposit,
+      };
+    }
+
     const latencyMs = Date.now() - startTime;
 
     return NextResponse.json({

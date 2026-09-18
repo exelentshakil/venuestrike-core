@@ -524,28 +524,55 @@ export function AiPackageRecommender() {
               </div>
             </div>
 
-            {/* Hero Price & Package Title */}
-            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 bg-gradient-to-br from-indigo-50/70 to-emerald-50/40 dark:from-indigo-950/40 dark:to-slate-900 p-4 rounded-xl border border-indigo-200 dark:border-indigo-800/80">
-              <div>
-                <h4 className="text-lg sm:text-xl font-semibold text-indigo-950 dark:text-indigo-200">
-                  {aiResult?.data?.packageName}
-                </h4>
-                <span className="text-xs font-bold text-[var(--color-text-secondary)] font-mono block mt-1">
-                  Resource Allocation: {aiResult?.data?.resourceAllocation} &bull; {aiResult?.data?.playDurationMinutes} Mins Play
-                </span>
-              </div>
-              <div className="text-left sm:text-right shrink-0">
-                <div className="flex items-baseline sm:justify-end gap-1.5">
-                  <span className="text-2xl sm:text-3xl font-semibold font-mono text-emerald-700 dark:text-emerald-400">
-                    ${financials.totalPackagePrice}
+            {/* Hero Price & Package Title - Stripe Bento Architecture */}
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-panel-subtle)] p-4 sm:p-5 shadow-2xs space-y-3.5">
+              {/* Row 1: Package Title (Left) + Total Value & F&B Mix (Right) */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 border-b border-[var(--color-border)] pb-3">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 px-2.5 py-0.5 text-xs font-semibold text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 font-mono whitespace-nowrap">
+                      <Sparkles className="h-3 w-3 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                      Confirmed AI Package
+                    </span>
+                    <span className="text-xs font-mono text-[var(--color-text-muted)] font-medium hidden sm:inline">
+                      Dynamic Yield Optimized
+                    </span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-semibold tracking-tight text-[var(--color-text-primary)]">
+                    {aiResult?.data?.packageName}
+                  </h4>
+                </div>
+
+                {/* Right Hero Yield */}
+                <div className="flex items-baseline gap-2 shrink-0 sm:text-right">
+                  <span className="text-xs font-mono uppercase text-[var(--color-text-muted)] font-medium">Total</span>
+                  <span className="text-2xl sm:text-3xl font-semibold font-mono tabular-nums text-[var(--color-text-primary)]">
+                    ${Number(financials.totalPackagePrice).toLocaleString()}
                   </span>
-                  <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 font-mono bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800">
+                  <span className="inline-flex items-center text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-100/80 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800 shrink-0">
                     {fnbPercentage}% F&amp;B Mix
                   </span>
                 </div>
-                <span className="text-xs font-bold text-indigo-800 dark:text-indigo-300 block font-mono mt-1">
-                  Required Card Deposit: ${financials.requiredDeposit} (Pre-Authorized)
-                </span>
+              </div>
+
+              {/* Row 2: Resource Allocation (Left) + Required Pre-Auth Deposit (Right) */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+                <div className="flex items-center gap-2 text-[var(--color-text-secondary)] min-w-0">
+                  <Layers className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                  <span className="font-medium text-[var(--color-text-primary)] truncate">
+                    {aiResult?.data?.resourceAllocation}
+                  </span>
+                  <span className="text-[var(--color-text-muted)] shrink-0">&bull;</span>
+                  <span className="font-mono text-[var(--color-text-muted)] shrink-0">
+                    {aiResult?.data?.playDurationMinutes} Mins Play
+                  </span>
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[var(--color-surface)] border border-[var(--color-border)] text-xs font-mono font-medium text-[var(--color-text-secondary)] shadow-2xs shrink-0">
+                  <CreditCard className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                  <span>Required Card Deposit: <strong className="text-[var(--color-text-primary)] font-semibold">${financials.requiredDeposit}</strong></span>
+                  <span className="text-[var(--color-text-muted)] font-normal">(Pre-Authorized)</span>
+                </div>
               </div>
             </div>
 
